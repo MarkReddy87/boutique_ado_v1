@@ -1,9 +1,12 @@
+""" docstring """
 from django.db import models
 
 
 class Category(models.Model):
+    """ docstring """
 
     class Meta:
+        """ docstring """
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=254)
@@ -13,10 +16,12 @@ class Category(models.Model):
         return self.name
 
     def get_firendly_name(self):
+        """ docstring """
         return self.friendly_name
 
 
 class Product(models.Model):
+    """ docstring """
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
