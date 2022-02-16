@@ -8,6 +8,7 @@ from products.models import Product
 
 
 class Order(models.Model):
+    """ docstring """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -55,6 +56,7 @@ class Order(models.Model):
             return self.order_number
 
 class OrderLineItem(models.Model):
+    """ docstring """
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='limeitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     product_size = models.CharField(max_length=2, null=True, blank=True) # XS, S, M. L, XL
