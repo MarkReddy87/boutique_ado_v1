@@ -3,6 +3,7 @@ from django.contrib import messages
 
 from .forms import OrderForm
 
+
 def checkout(request):
     """ docstring """
     bag = request.session.get('bag', {})
