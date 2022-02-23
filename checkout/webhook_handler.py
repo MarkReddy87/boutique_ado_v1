@@ -45,7 +45,7 @@ class StripeWebHookHandler:
             try:
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
-                    emial__iexact=billing_details.eamil,
+                    email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
                     postcode__iexact=shipping_details.address.postal_code,
@@ -71,7 +71,7 @@ class StripeWebHookHandler:
             try:
                 order = Order.objects.create(
                         full_name=shipping_details.name,
-                        emial=billing_details.eamil,
+                        email=billing_details.email,
                         phone_number=shipping_details.phone,
                         country=shipping_details.address.country,
                         postcode=shipping_details.address.postal_code,
