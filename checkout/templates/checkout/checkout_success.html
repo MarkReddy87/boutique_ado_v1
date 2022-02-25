@@ -192,12 +192,21 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-7 textright">
-                <a href="{% url 'products' %}?category_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
+                {% if from_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
                     <span class="icon mr-2">
-                        <i class="fas fa-gifts"></i>
+                        <i class="fas fa-angle-left"></i>
                     </span>
-                    <span class="text-upercase">Now check out the latest deals!</span>
+                    <span class="text-upercase">Back to Profile</span>
                 </a>
+                {% else %}
+                    <a href="{% url 'products' %}?category_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
+                        <span class="icon mr-2">
+                            <i class="fas fa-gifts"></i>
+                        </span>
+                        <span class="text-upercase">Now check out the latest deals!</span>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
